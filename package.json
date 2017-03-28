@@ -1,0 +1,24 @@
+{
+  "name": "sampleschart",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {},
+  "author": "Pierre Kraft",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --optimize-minimize",
+    "start": "webpack-dev-server --watch --open"
+  },
+  "dependencies": {
+    "chart.js": "^2.5.0",
+    "lodash.groupby": "^4.6.0",
+    "lodash.keys": "^4.2.0",
+    "papaparse": "^4.2.0"
+  },
+  "devDependencies": {
+    "file-loader": "^0.10.1",
+    "null-loader": "^0.1.1",
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.2"
+  }
+}

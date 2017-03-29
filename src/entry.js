@@ -91,10 +91,10 @@ function chartData() {
     var y = yEl.value
 
     var filtered = data.data.filter(function (v) {
-        return v.N != null
+        return (v[x] != null && v[y] != null && v[group] != null)
     })
     var grouped = groupBy(filtered, group)
-    var labels = keys(groupBy(filtered, x)).sort()
+    var labels = keys(groupBy(filtered, x)).map(function (v) {return +v}).sort(function(a,b){return a - b})
     var lineLabels = keys(grouped)
     var datasets = lineLabels.map(function (label) {
         var items = grouped[label]

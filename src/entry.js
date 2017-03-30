@@ -69,10 +69,9 @@ function showCustomizers() {
     var valueFields = fields.slice()
     var elements = [groupEl, xEl, yEl]
     elements.forEach(function (el) {
-        var selected = el.options[el.selectedIndex]
-        var value = selected && selected.value
+        var value = el.value
         var temp = valueFields.filter(function (v) {
-            return v != el
+            return v != value
         })
 
         if (valueFields.length > temp.length) {
@@ -177,7 +176,7 @@ function updateChart() {
     hiddenLegends = []
     var myData = chartData()
     var downloadData = clone(myData)
-    downloadDataOriginal = downloadData.datasets
+    downloadDataOriginal = clone(myData.datasets)
     var visibleChartOptions = chartOptions(myData)
     var downloadChartOptions = chartOptions(downloadData)
 
